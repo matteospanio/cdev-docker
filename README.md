@@ -1,4 +1,4 @@
-# unipd-cdev-docker
+# cdev-docker
 
 ![Hello C](https://img.shields.io/badge/Course-Introduction%20to%20C-blue)
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
