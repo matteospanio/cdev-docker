@@ -1,5 +1,11 @@
 FROM ubuntu:latest
 
+LABEL org.opencontainers.image.source=https://github.com/matteospanio/cdev-docker
+
+LABEL org.opencontainers.image.description="Docker image for a C development environment at the University of Padua."
+
+LABEL org.opencontainers.image.licenses=MIT
+
 RUN yes | unminimize
 
 RUN apt-get update && apt-get install -y sudo python3 python3-pip \

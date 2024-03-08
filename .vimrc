@@ -27,8 +27,6 @@ set expandtab
 set noshiftround
 set nobackup
 set noswapfile
-set undodir=~/.vim/undodir
-set undofile
 set smartindent
 " Show line numbers
 set number relativenumber
@@ -56,6 +54,27 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+" # Close brackets automatically, with return
+inoremap {<cr> {<cr>}<C-O><S-O>
+inoremap (<cr> (<cr>)<c-o><s-o>
+inoremap [<cr> [<cr>]<c-o><s-o>
+" # Close brackets without return
+inoremap ( ()<left>
+inoremap { {}<left>
+inoremap [ []<left>
+" # Two cases below are covered by inoremap <exp>
+" inoremap " ""<left>
+" inoremap ' ''<left>
+" # If you close a bracket that is already closed, it overwrites
+inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+inoremap <expr> ] strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "'" ? "\<Right>" : "''<left>"
+inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"<left>"
+" # enclose a word in normal mode with "'({[
+nnoremap ' mmbi'<esc>ea'<esc>`m<right>
+nnoremap " mmbi"<esc>ea"<esc>`m<right>
 
 " if hidden is not set, TextEdit might fail.
 set hidden
