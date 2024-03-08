@@ -24,19 +24,19 @@ cdev-cli
 To build the Docker image, run the following command:
 
 ```bash
-docker build -t matteospanio/cdev  .
+docker build -t ghcr.io/matteospanio/cdev  .
 ```
 
 or pull the image from the Docker Hub:
 
 ```bash
-docker pull matteospanio/cdev
+docker pull ghcr.io/matteospanio/cdev
 ```
 
 To run the Docker container, use the following command:
 
 ```bash
-docker run -it --rm -v $(pwd):/home/cdev matteospanio/cdev
+docker run -it --rm -v $(pwd):/home/cdev ghcr.io/matteospanio/cdev
 ```
 
 ## License

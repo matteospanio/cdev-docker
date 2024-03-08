@@ -1,7 +1,7 @@
 .PHONY: build
 build:
-	docker build -t matteospanio/cdev .
+	docker build -t ghcr.io/matteospanio/cdev .
 
 .PHONY: push
 push: build
-	docker push matteospanio/cdev
+	docker push ghcr.io/matteospanio/cdev
